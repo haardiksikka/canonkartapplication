@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="../jquery.js"></script>
+    <script src="cartList.js"></script>
+    <title>Cart</title>
+</head>
+<body>
+        <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="http://localhost:8980">Cheapkart</a>
+                  </div>
+                  <ul class="nav navbar-nav">
+                    <li ><a href="http://localhost:8980">Home</a></li>
+                    <li><a href="http://localhost:8980/addproduct/">Add Product</a>
+                    <li class="active"><a href="http://localhost:8980/cart">Checkout</a></li>
+                    <li id="logout" style="color:white; margin-top:15px"> Logout</li>
+                  </ul>
+                </div>
+              </nav>
+              <h1 style="margin:10px">Items in Cart</h1>
+              <hr>
+<div style="margin:10px" class="row" id='productlist'>
+        <div class="col-sm-2" style="margin:10px" class="list-group-item">No product to display</div>
+</div>
+
+<button style="margin:10px" class="btn btn-primary" id="tt">Cart Total</button>
+<ul class="list-group" id='total'>
+    <li style="background: lightgoldenrodyellow" class="list-group-item" id='total'> 0  </li>
+    </ul>   
+</body>
+</html>

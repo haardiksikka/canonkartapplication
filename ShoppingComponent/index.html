@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="jquery.js"></script>
+    <script src="shoppingList.js"></script>
+
+    <title>Home</title>
+</head>
+<body>
+   
+    <!-- <input id='username' type='text' placeholder="Name"><br> -->
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Cheapkart</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <!-- <li><a href="#">Vendor Login</a></li> -->
+            <li><a href="http://localhost:8980/vendors/">Vendors</a></li>
+
+            <li><a href="http://localhost:8980/cart">Checkout</a></li>
+            <li id="logout" style="color:white; margin-top:15px">Logout</li>
+          </ul>
+        </div>
+    </nav>
+      <h1 style="margin:10px">User</h1>
+    <form>
+        <div style="margin:10px" class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input id="username" type="text" class="form-control"  placeholder="username">
+        </div>
+
+      </form>
+      
+    <button style="margin:10px" class="btn btn-primary" id="userlogin">Login!</button>
+
+    <div style="margin:10px" class="row" id='productlist'>
+        <div class="col-sm-2" style="margin:10px" class="list-group-item">No product to display</div>
+        
+    </div>
+
+</body>
+</html>
