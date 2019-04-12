@@ -145,24 +145,13 @@ app.get('/allproducts', async (req, res) => {
 app.post('/shopping', async (req, res) => {
 
     try {
-      const user=await User.findAll({
-          where: {
-              name: req.body.name
-          }
-      })
-     // console.log(user.length)
-      if(user.length==0) { 
-      const result = await User.create({
-        name: req.body.name,
-       
-      })
-
-      res.send({success: true, objBody:result})
-    }
-      else{
-
-            res.send({success: true, objBody:user} )
+    
+    const result= await User.findOrCreate({
+      where: {
+        name:req.body.name
       }
+    })
+    res.send({success: true, objBody:result})
     } 
     catch (e) {
       res.send({success: false, err: e.message})

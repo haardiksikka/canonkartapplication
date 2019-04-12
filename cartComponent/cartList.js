@@ -12,6 +12,7 @@ $(() => {
 
   $('#logout').click(()=>{
     sessionStorage.removeItem("session")
+    window.location='/'
     alert('successfully logged out!')
   })
 
@@ -26,7 +27,8 @@ $(() => {
           if (data.success) {
              refreshList(data.postbody[0].id)
           } 
-          else {           
+          else { 
+            window.location='/'          
             alert('User not logged in')
           }
         }

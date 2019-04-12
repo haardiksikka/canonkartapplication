@@ -5,6 +5,7 @@ $(() => {
     
 $('#logout').click(()=>{
   sessionStorage.removeItem("session")
+  window.location="/";
   alert('successfully logged out!')
 })
     
@@ -18,10 +19,11 @@ $('#userlogin').click(() => {
         },
         (data) => {
           if (data.success) {
-              console.log('enetring...in shopping')
+              
+             
              userdata.id=data.objBody[0].id
              sessionStorage.setItem("session",data.objBody[0].id)
-             console.log(sessionStorage.getItem('session'))
+             
              refreshList()
           } 
           else {
@@ -40,7 +42,7 @@ function refreshList() {
     (data) => {
     $('#productlist').empty()
 
-   console.log("loggin data")
+   
    var items = data
          console.log(data)
     for (let product of items) {
