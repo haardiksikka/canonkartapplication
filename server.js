@@ -15,7 +15,7 @@ app.use(express.urlencoded({
 }))
 //------vendor component----------
 app.use('/',
-  express.static(__dirname + '/shoppingComponent')
+  express.static(__dirname + '/ShoppingComponent')
 )
 
 app.use('/vendors',
