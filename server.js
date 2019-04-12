@@ -250,8 +250,9 @@ app.get('/itemsInCart', async (req, res) => {
     res.send(result)
   })
 
+const PORT = process.env.PORT || 4444
 db.sync()
   .then(() => {
-      console.log('listenin to 8980')
-    app.listen(8980)
+      console.log('listening ...')
+    app.listen(PORT)
   })
