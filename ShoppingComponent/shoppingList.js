@@ -10,7 +10,7 @@ $('#logout').click(()=>{
 })
     
 
- 
+ refreshList();
 $('#userlogin').click(() => {
       $.post(
         '/shopping',
@@ -52,12 +52,22 @@ function refreshList() {
         `<div style="margin:10px; border:4px solid;padding:23px" class="col-sm-2" id='products'>
               Product: ${product.name}
                 <br> price: ${product.price}<br> 
-                <button class="btn btn-primary" onclick="addtocart('${product.price}','${product.id}','${userdata.id}')">Add To Cart</button>
+                 vendor: ${product.vendor.name}<br>
+                <button class="btn btn-primary add-to-cart-btn" onclick="addtocart('${product.price}','${product.id}','${userdata.id}')">Add To Cart</button>
 
           </div>`
+          
         
       )
+      if(sessionStorage.getItem('session')){
+        $('.add-to-cart-btn').prop('disabled',false)  
     }
+    else{
+      $('.add-to-cart-btn').prop('disabled',true)
+    }
+    
+      }
+
   })
 }
 

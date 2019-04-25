@@ -136,11 +136,11 @@ express.static(__dirname + '/ShoppingComponent')
 )
 app.get('/allproducts', async (req, res) => {
 
-    const products = await Product.findAll()
-  // const result= await Cart.findAll({ include: [ Product, User ] })
+    //const products = await Product.findAll()
+   const result= await Product.findAll({ include: [ Vendor ] })
   
 
-    res.send(products)
+    res.send(result)
   })
 app.post('/shopping', async (req, res) => {
 

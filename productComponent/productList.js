@@ -19,7 +19,7 @@ $(() => {
   
     
   
-  //  refreshList()
+    refreshList()
 
 $('#addproduct').click(() => {
       $.post(
@@ -76,3 +76,31 @@ function deleteProduct(pid){
 });
 }
 
+function refreshList() {
+  $.get(        
+    '/allproducts', 
+    (data) => {
+    $('#productlist').empty()
+
+   
+   var items = data
+         console.log(data)
+    for (let product of items) {
+
+      $('#productlist').append(
+      
+        `<div style="margin:10px; border:4px solid;padding:23px" class="col-sm-2" id='products'>
+              Product: ${product.name}
+                <br> price: ${product.price}<br> 
+                 quantity: ${product.quantity} <br>
+                 vendor : ${product.vendor.name}<br>
+          </div>`
+          
+        
+      )
+
+    
+      }
+
+  })
+}

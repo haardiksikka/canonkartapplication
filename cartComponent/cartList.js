@@ -100,11 +100,18 @@ function refreshList(userid) {
       `<div style="margin:10px; border:4px solid;padding:23px" class="col-sm-2" id='products'>
             Product: ${products.product.name}
               <br> price: ${products.price}<br> 
-              <button class="btn btn-primary"  onclick="addtocart('${products.price}','${products.product.id}','${products.user.id}')">+</button>
+              <button id='${products.pid}' class="btn btn-primary"  onclick="addtocart('${products.price}','${products.product.id}','${products.user.id}')">+</button>
                    <span>${products.quantity}</span>
-              <button class="btn btn-primary"  onclick="removeFromCart('${products.price}','${products.product.id}','${products.user.id}')">-</button>
+              <button class="btn btn-primary delete-button"  onclick="removeFromCart('${products.price}','${products.product.id}','${products.user.id}')">-</button>
         </div>`
       )
+      
+      if(products.quantity<=products.product.quantity){
+        $(`#${products.pid}`).attr('disabled',false)
+      }
+      else{
+        $(`#${products.pid}`).attr('disabled',true)
+      }
     }
   })
 }
