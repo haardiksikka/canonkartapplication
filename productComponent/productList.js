@@ -19,7 +19,7 @@ $(() => {
   
     
   
-    refreshList()
+    refreshList2()
 
 $('#addproduct').click(() => {
       $.post(
@@ -76,7 +76,7 @@ function deleteProduct(pid){
 });
 }
 
-function refreshList() {
+function refreshList2() {
   $.get(        
     '/allproducts', 
     (data) => {
